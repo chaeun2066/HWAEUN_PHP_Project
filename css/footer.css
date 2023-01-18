@@ -1,0 +1,92 @@
+@font-face {
+  font-family: 'KOTRA_GOTHIC';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10-21@1.0/KOTRA_GOTHIC.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+:root{
+  --normal_font: rgb(51, 51, 51);
+  --theme_color: #2b3729;
+}
+.white{
+  color: white;
+}
+.gray{
+  color: #8d8d8d;
+}
+.bottom{
+  font-family: 'KOTRA_GOTHIC';
+  background-color: var(--normal_font);
+  font-size:12px;
+  padding-top:30px;
+  padding-bottom:30px;
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  min-width: 1320px;
+}
+/** left */
+.bottom ul{
+  list-style: none;
+  padding: 0;
+}
+.bottom li{
+  margin: 0 4px;
+}
+.bottom p{
+  margin: 0;
+} 
+.copyright{
+  color:#5e5e5e;
+  padding-top: 20px;
+  font-size:10px;
+}
+.bottom #logo_title{
+  font-family: 'YUniverse-B';
+  font-size: 22px;
+  margin-bottom: 15px;
+}
+.bottom .footer_menu{
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+.bottom a{
+  text-decoration-line: none;
+}
+/** right */
+.sns i{
+  color: #8d8d8d;
+  border-radius: 20px;
+  background-color:#3c3c3c;
+  font-size: 20px;
+  padding: 10px;
+  margin: 5px;
+}
+.right ul{
+  display: flex;
+  flex-direction: column;
+}
+.right p{
+  margin-top: 10px;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+/* 스크롤 */
+.scrollTop{
+  width: 50px;
+  height: 50px;
+  position: fixed;
+  right: 0;
+  bottom: 10px;
+  background-color: var(--theme_color);
+  text-align: center;
+}
+.scrollTop p{
+  font-size: 10px;
+  margin: 0;
+}
+.scrollTop img{
+  width: 10px;
+  height: 10px;
+  margin-top: 13px;
+}

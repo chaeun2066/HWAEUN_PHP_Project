@@ -1,0 +1,151 @@
+@font-face {
+  font-family: 'YUniverse-B';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_yuniverse@1.0/YUniverse-B.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+} 
+@font-face {
+  font-family: 'S-CoreDream-3Light';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+.main_content{
+  padding-top:90px;
+  width: 100%;
+  min-width: 1320px;
+  font-family: 'S-CoreDream-3Light';
+}
+.main_content a{
+  text-decoration-line: none;
+}
+.blank{
+  height: 8px;
+}
+.center{
+  display: flex;
+  justify-content: center;
+}
+.somenu{
+  font-family: 'YUniverse-B';
+  display: flex;
+  flex-direction: column;
+  font-size: 23px;
+  margin-top: 20px;
+  margin-right: 150px;
+}
+.somenu li{
+  margin-top: 5px;
+}
+#login_somenu{
+  color: rgb(200, 200, 200);
+}
+#join_somenu{
+  color: #2b3729;
+}
+#login_somenu:hover{
+  color: #5d7759;
+}
+.minimap{
+  margin-top: 10px;
+  font-size: 13px;
+  width: 100%;
+  min-width: 1320px;
+}
+.minimap ul{
+  display: flex;
+  padding-left: 160px;
+}
+.minimap ul li{
+  padding: 2px 5px;
+}
+.minimap a{
+  color: var(--normal_font);
+}
+.gray{
+  color: rgb(204, 204, 204);
+}
+.join_top{
+  border-bottom: 2px solid #3a4a37;
+}
+.join_top p{
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+.form{
+  font-size: 14px;
+}
+span{
+  color: #ae3e32;
+}
+.box{
+  display: flex;
+  padding: 15px;
+  align-items: center;
+}
+.title{
+  width: 170px;
+}
+input{
+  border: none;
+  background-color: transparent;
+  outline: none;
+  margin-top: 8px;
+}
+.input{
+  border: 1px solid #9d9d9d;
+  height: 40px;
+  width: 500px;
+  padding-left: 10px;
+  line-height: 40px;
+}
+.input input{
+  font-size: 16px;
+  width: 490px;
+  font-family: 'S-CoreDream-3Light';
+}
+.email{
+  border: 1px solid #9d9d9d;
+  height: 40px;
+  width: 233px;
+  padding-left: 10px;
+}
+.email input{
+  font-size: 16px;
+  width: 222px;
+  font-family: 'S-CoreDream-3Light';
+}
+.green_button{
+  background-color: #3a4a37;
+  color: white;
+  height: 40px;
+  width: 100px;
+  margin: 0;
+  font-family: 'S-CoreDream-3Light';
+  margin-left: 10px;
+}
+.gray_button{
+  background-color: #c3c3c3;
+  color: white;
+  height: 40px;
+  width: 100px;
+  margin: 0;
+  font-family: 'S-CoreDream-3Light';
+}
+.buttons{
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 18px;
+  margin-top: 20px;
+  margin-bottom: 80px;
+}
+.buttons input{
+  width: 200px;
+}
+.join_top{
+  display: flex;
+  justify-content: space-between;
+}
+.error, .success{
+  color: #ae3e32;
+}

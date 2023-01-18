@@ -1,0 +1,94 @@
+@font-face {
+  font-family: 'YUniverse-B';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_yuniverse@1.0/YUniverse-B.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+} 
+@font-face {
+  font-family: 'S-CoreDream-3Light';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+.main_content{
+  padding-top:90px;
+  width: 100%;
+  min-width: 1320px;
+  font-family: 'S-CoreDream-3Light';
+}
+.main_content a{
+  text-decoration-line: none;
+}
+.main_content h2{
+  text-align: center;
+  font-family: 'YUniverse-B';
+  font-size: 40px;
+  color: #3a4a37;
+}
+.main_content hr{
+  width: 60%;
+  color: #3a4a37;
+}
+.blank{
+  height: 8px;
+}
+.center{
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+  margin-bottom: 80px;
+}
+.brand_box{
+  margin-left: 100px;
+  width: 480px;
+  text-align: center;
+}
+.form h2{
+  padding-top: 60px;
+}
+.form h3{
+  font-size: 22px;
+}
+.form h4{
+  font-size: 15px;
+  padding-top: 20px;
+}
+.minimap{
+  margin-top: 10px;
+  font-size: 13px;
+  width: 100%;
+  min-width: 1320px;
+}
+.minimap ul{
+  display: flex;
+  padding-left: 160px;
+}
+.minimap ul li{
+  padding: 2px 5px;
+}
+.minimap a{
+  color: var(--normal_font);
+}
+.gray{
+  color: rgb(204, 204, 204);
+}
+.brand_top p{
+  padding-bottom: 5px;
+  font-weight: 600;
+  font-size: 10px;
+  border-bottom: 2px solid #3a4a37;
+}
+.form{
+  font-size: 14px;
+}
+.left_img{
+  width: 300px;
+  height: 450px;
+  overflow:hidden;
+}
+.brand_img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  margin:0;
+}

@@ -1,0 +1,70 @@
+:root{
+  --normal_font: rgb(51, 51, 51);
+  --theme_color: #3a4a37;
+}
+@font-face {
+  font-family: 'YUniverse-B';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_yuniverse@1.0/YUniverse-B.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+} 
+@font-face {
+   font-family: 'S-CoreDream-3Light';
+   src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff') format('woff');
+   font-weight: normal;
+   font-style: normal;
+}
+body{
+  margin: 0;
+}
+.top{
+  position: fixed;
+  display: flex;
+  float:top;
+  width: 100%;
+  min-width: 1320px;
+  height: 75px;
+  justify-content: space-around;
+  margin: 0 auto;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  font-family: 'YUniverse-B';
+  color: var(--normal_font);
+}
+h1{
+  font-size: 28px;
+  font-weight: 600;
+}
+.top a{
+  text-decoration-line: none;
+  color: var(--normal_font);
+}
+ul{
+  display: flex;
+  list-style: none;
+  margin: 0px;
+}
+.user_menu ul{
+  justify-content: flex-end;
+}
+.user_menu ul li{
+  margin: 3px 6px;
+  font-size: 14px;
+}
+.menu_bar a{
+  font-family: 'S-CoreDream-3Light';
+  color: var(--theme_color);
+  font-weight: 550;
+}
+.menu_bar ul{
+  margin-top : 10px;
+  font-size: 18px;
+}
+.menu_bar ul li{
+  margin: 3px 13px;
+}
+.menu_bar img{
+  margin-top: 6px;
+  width: 18px;
+  height: 18px;
+}
