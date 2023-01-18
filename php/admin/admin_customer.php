@@ -74,7 +74,6 @@
   }
   #admin{
     width: 740px;
-    height: 350px;
   }
   .admin_title, .admin_list{
     display: flex; 

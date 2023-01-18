@@ -71,17 +71,6 @@
     height: 1px;
     background-color: #2b3729;
     margin : 0;
-  }
-  .thumb {
-    display: block;
-    overflow: hidden;
-    height: 350px;
-    width: 350px;
-  }
-  .thumb img {
-    display: block; 
-    min-width: 100%;   
-    min-height: 100%;  
   } 
   .box{
     display: flex;
@@ -130,9 +119,6 @@
     font-family: 'S-CoreDream-3Light';
     margin-right: 20px;
     float: right;
-  }
-  .context{
-    height: 350px;
   }
   .content{
     padding: 5px;
