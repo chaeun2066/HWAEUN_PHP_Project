@@ -235,7 +235,7 @@
 <?php 
             $id = isset($_SESSION['id']) ? $_SESSION['id'] : "";
             if($id == 'admin'){
-              echo "<li><button onclick=\"location.href='shop_form.php'\" class=\"green_button\">글쓰기</button></li>";
+              echo "<li><button onclick=\"location.href='shop_form.php'\" class=\"green_button\">상품등록</button></li>";
             }
 ?>
             </li>
