@@ -87,9 +87,15 @@
     background-color: #d7e3d3;
   }
   .admin_list{
+    display: flex;
+    flex-direction: column;
     margin: 5px 5px 5px 5px;
     border-bottom: 1px solid #dfdfdf;
     padding-bottom: 3px;
+  }
+  .list{
+    display: flex;
+    margin: 3px;
   }
   .check{
     width: 50px;
@@ -192,6 +198,7 @@
                 <div class="subject">제목</div>
                 <div class="regist_day">작성일</div>
               </div>
+              <form method="POST" class="admin_list" action="admin_dui.php?mode=board_delete">
 <?php
               include('../../db/db_connect.php');
 
@@ -208,20 +215,20 @@
                 $regist_day  = $row["regist_day"];
                 $regist_day  = substr($regist_day, 0, 10);
 ?>
-              <form method="POST" class="admin_list" action="admin_dui.php?mode=board_delete">
+              <div class="list">
                 <div class="check"><input type="checkbox" name="item[]" value="<?=$num?>"></div>
                 <div class="num"><?=$number?></div>
                 <div class="name"><?=$name?></div>
                 <div class="subject"><?=$subject?></div>
                 <div class="regist_day"><?=$regist_day?></div>
-              </form>  
+              </div>  
 <?php
               $number--;
             }
             mysqli_close($con);
 ?>
-            </div> 
-            <button type="submit" class="red_button">선택된 글 삭제</button>
+                <button type="submit" class="red_button">선택된 글 삭제</button>
+              </form>  
           </div>	    	
         </div>
       </div>
