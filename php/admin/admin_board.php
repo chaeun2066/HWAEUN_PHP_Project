@@ -75,7 +75,6 @@
   }
   #admin{
     width: 740px;
-    height: 350px;
   }
   .admin_title, .admin_list{
     display: flex; 
@@ -93,11 +92,11 @@
     padding-bottom: 3px;
   }
   .check{
-    width: 80px;
+    width: 50px;
     text-align: center;
   }
   .num{
-    width: 80px;
+    width: 70px;
     text-align: center;
   }
   .name{
@@ -105,10 +104,10 @@
     text-align: center;
   }
   .subject{
-    width: 250px;
+    width: 300px;
   }
   .regist_day{
-    width: 150px;
+    width: 200px;
     text-align: center;
   }
   .level input{
