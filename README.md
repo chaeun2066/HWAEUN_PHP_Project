@@ -22,7 +22,7 @@ PHP, HTML, CSS, Javascript를 활용한 화장품 웹사이트 HWAEUN 제작
 ● Fucntion Summary and Information
 -------------
 
-[![Video Label](http://img.youtube.com/vi/BHmP-RakGJk/0.jpg)](https://youtu.be/BHmP-RakGJk)
+[![Video Label](http://img.youtube.com/vi/9ckcUQRocAM/0.jpg)](https://youtu.be/9ckcUQRocAM)
 
 
 ● Version History
