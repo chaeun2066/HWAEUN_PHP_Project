@@ -1,160 +1,3 @@
-<style>
-  .main_content{
-    padding-top:90px;
-    width: 100%;
-    min-width: 1320px;
-    font-family: 'S-CoreDream-3Light';
-  }
-  .main_content a{
-    text-decoration-line: none;
-  }
-  .blank{
-    height: 8px;
-  }
-  .center{
-    display: flex;
-    justify-content: center;
-    margin-bottom: 60px;
-  }
-  .somenu{
-    font-family: 'YUniverse-B';
-    display: flex;
-    flex-direction: column;
-    font-size: 23px;
-    margin-top: 20px;
-    margin-right: 100px;
-    width: 130px;
-  }
-  .somenu li{
-    margin-top: 5px;
-  }
-  #li_somenu{
-    color: rgb(200, 200, 200);
-    font-family: 'S-CoreDream-3Light';
-    font-size: 16px;
-  }
-  #li_somenu:hover{
-    color: #5d7759;
-    font-size: 18px;
-  }
-  #title_somenu{
-    color: #2b3729;
-    font-family: 'YUniverse-B';
-  }
-  #li_somenu_board{
-    color: #2b3729;
-    font-family: 'S-CoreDream-3Light';
-    font-size: 18px;
-    width: 150px;
-  }
-  .minimap{
-    margin-top: 10px;
-    font-size: 13px;
-    width: 100%;
-    min-width: 1320px;
-  }
-  .minimap ul{
-    display: flex;
-    padding-left: 160px;
-  }
-  .minimap ul li{
-    padding: 2px 5px;
-  }
-  .minimap a{
-    color: var(--normal_font);
-  }
-  .gray{
-    color: rgb(204, 204, 204);
-  }
-  .cart_top{
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 10px;
-    padding-right: 5px;
-  }
-  .cart_top h2{
-    margin: 0;
-  }
-  .cart_title{
-    display: flex; 
-    border-top:2px solid #2b3729;
-    border-bottom:1px solid #b0bbac;
-    font-size: 16px;
-    padding: 5px;
-    font-weight: 600;
-    background-color: #d7e3d3;
-  }
-  #cart_list{
-    display: flex; 
-    flex-direction: column;
-    margin: 5px 5px 5px 5px;
-    padding-bottom: 3px;
-    padding-left: 0;
-    min-height: 400px;
-  }
-  .check{
-    width: 60px;
-    text-align: center;
-  }
-  .pic{
-    width: 110px;
-    text-align: center;
-  }
-  .type{
-    width: 80px;
-    text-align: center;
-  }
-  .name{
-    width: 300px;
-    text-align: center;
-  }
-  .price{
-    width: 120px;
-    text-align: center;
-  }
-  .count{
-    width: 100px;
-    text-align: center;
-  }
-  .red_button{
-    margin-top: 20px;
-    border:none;
-    background-color: #782f2f;
-    color: white;
-    height: 30px;
-    width: 150px;
-    font-family: 'S-CoreDream-3Light';
-  }
-  .green_button{
-    margin-top: 20px;
-    border:none;
-    background-color: #3a4a37;
-    color: white;
-    height: 30px;
-    width: 150px;
-    font-family: 'S-CoreDream-3Light';
-  }
-  .subject{
-    padding-top: 10px;
-    padding-bottom: 15px;
-    display: flex;
-    align-items: center;
-    border-bottom: 1px solid #dfdfdf;
-  }
-  .subject a, #page_num a{
-    color: var(--normal_font);
-  }
-  .subject a:hover{
-    text-decoration-line: underline;
-    text-underline-position : under;
-  }
-  .calculate{
-    font-size: 25px;
-    font-weight: 600;
-    float:right;
-    display: flex;
-  }
-</style>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -162,6 +5,10 @@
   <title>HWAEUN</title>
   <link href="http://<?=$_SERVER['HTTP_HOST'];?>/hwaeun/img/leaf.png" rel="shortcut icon" type="image/x-icon">
   <link rel="stylesheet" href="http://<?=$_SERVER['HTTP_HOST'];?>/hwaeun/css/common.css">
+  <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+  <script src="../../js/order_address.js"></script>
+  <script src="../../js/buy.js"></script>
+  <link rel="stylesheet" href="../../css/cart_list.css">
 </head>
 <body>
   <header>
@@ -263,27 +110,152 @@
               <button type="submit" class="red_button">선택된 상품 삭제</button>
             </form>
           </ul>
+          <p class="deliver_fee">(1500,000원 이상 결제 시, 배송비 무료)</p>
           <div class="calculate">
-            <p class="cal_title">총 결제 금액 &nbsp;&nbsp; : &nbsp;&nbsp;</p>
 <?php
-              $calculate = 0;
+            $calculate = 0;
 
-              $sql = "select * from cart where s_id='$id' order by s_num desc";
-              $result = mysqli_query($con, $sql);
-              $total_record = mysqli_num_rows($result);
+            $sql = "select * from cart where s_id='$id' order by s_num desc";
+            $result = mysqli_query($con, $sql);
+            $total_record = mysqli_num_rows($result);
 
-              $number = $total_record;
+            $number = $total_record;
 
-              while($row = mysqli_fetch_array($result)){
-                $s_price = (int)str_replace(',','',$row["s_price"]);
-                $s_count = (int)$row['s_count'];            
-                
-                $calculate += $s_price * $s_count;
-                
-              }
-                mysqli_close($con);
+            while($row = mysqli_fetch_array($result)){
+              $s_price = (int)str_replace(',','',$row["s_price"]);
+              $s_count = (int)$row['s_count'];            
+              
+              $calculate += $s_price * $s_count;        
+            }
+            mysqli_close($con);
 ?>
-              <p><?=number_format($calculate)?>&nbsp;원</p>
+            <div class="cal_product">
+              <p class="cal_product_price">주문상품금액&nbsp;&nbsp;<?=number_format($calculate)?>원</p>
+            </div>
+            <div class="sign">
+              <p>+</p>
+            </div>
+            <div class="cal_deliver">
+<?php
+              if($calculate >= 150000){
+                $total = $calculate + 0;
+?>
+                <p class="cal_deliver_price">총 배송비 0원</p>
+<?php
+              }else{
+                $total = $calculate + 3000;
+?>
+                <p class="cal_deliver_price">총 배송비 3,000원</p>
+<?php               
+              }
+?>              
+            </div>
+            <div class="sign">
+              <p>=</p>
+            </div>
+            <div class="cal_total">
+              <p class="cal_total_price">총 주문금액&nbsp;&nbsp;<?=number_format($total)?>원</p>
+            </div>
+          </div>
+          <div class="order">
+            <form name="order_form" id="order" method="POST" action="./cart_buy_server.php">
+              <div class="order_top">
+                <h2>주문자정보</h2>
+              </div>
+              <div class="form">
+                <div class="box">
+                  <div class="title">받는 분<span>*</span></div>
+                  <div class="input">
+                    <input type='text' placeholder='성함' name='name'>
+                  </div>
+                </div>
+              </div>
+              <div class="clear"></div>
+
+              <div class="form">
+                <div class="box">
+                  <div class="title">이메일</div>    
+                  <div class='email'>
+                    <input type='text' name='email1'>
+                  </div> &nbsp;@&nbsp;
+                  <div class='email'>
+                    <input type='text' name='email2'>
+                  </div>
+                </div>  
+              </div>
+              <div class="clear"></div>
+
+              <div class="form">
+                <div class="box">
+                  <div class="title">연락처<span>*</span></div>    
+                  <div class="input">
+                    <input type='text' placeholder='-기호 제외 입력' name='phone'>
+                  </div>
+                </div>  
+              </div>
+              <div class="clear"></div>
+
+              <div class="form">
+                <div class="box">
+                  <div class="title">주소<span>*</span></div> 
+                  <div>
+                    <div class="add">
+                      <div class="input_postcode">
+                        <input type="text" id="postcode" placeholder="우편번호" name="postcode">
+                      </div>  
+                      <input type="button" onclick="DaumPostcode()" class="address_button" value="우편번호 찾기"><br>
+                    </div>  
+                    <div class="clear_add"></div>
+                    <div class="add">
+                      <div class="input_address">  
+                        <input type="text" id="address" placeholder="주소" name="address">
+                      </div>
+                      <div class="clear_add"></div>
+                      <div class="input_address">  
+                      <input type="text" id="extraAddress" placeholder="참고항목" name="extraAddress">
+                      </div>
+                    </div>
+                    <div class="clear_add"></div>
+                    <div class="add">
+                      <div class="input_address">   
+                        <input type="text" id="detailAddress" placeholder="상세주소" name="detailAddress">
+                      </div>  
+                    </div>
+                  </div>   
+                </div>
+              </div>
+              <div class="clear"></div>
+
+              <div class="form">
+                <div class="box">
+                  <div class="title">배송메모</div>
+                  <div class="memo_box">
+                    <select name="memo" id="meno">
+                      <option value="memo1" selected>배송메세지를 선택해주세요</option>
+                      <option value="memo2" >부재시 경비(관리)실에 맡겨주세요.</option>
+                      <option value="memo3" >부재시 문앞에 놓아주세요.</option>
+                      <option value="memo4" >파손의 위험이 있는 상품이 있습니다. 배송시 주의해주세요.</option>
+                      <option value="memo5" >배송전에 연락주세요.</option>
+                      <option value="memo6" >메세지 직접 입력</option>
+                    </select>
+                    <div class="input">
+                      <input type="text" placeholder="직접 입력" name="memo_write">
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form">
+                <div class="box">
+                  <div class="title">결제수단<span>*</span></div>
+                  <input type="radio" name="buy_way" id="radio_random" value="random_bank" checked="checked">무통장입금
+                </div>
+              </div>
+              <hr>
+              <div class="buttons">
+                <input type="button" class="buy_button" onclick="check_input()" value="결제하기">
+              </div>
+            </form>
           </div>
         </div>
       </div>
