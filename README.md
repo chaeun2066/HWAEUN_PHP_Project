@@ -23,10 +23,13 @@ PHP, HTML, CSS, Javascript를 활용한 화장품 웹사이트 HWAEUN 제작
 -------------
 
 [![Video Label](http://img.youtube.com/vi/9ckcUQRocAM/0.jpg)](https://youtu.be/9ckcUQRocAM)
++) Add New Address API
+![KakaoTalk_Recording_20230127_223858](https://user-images.githubusercontent.com/114280483/215106959-c0b05e99-3995-4f97-93b8-b62e195a4466.gif)
 
 
 ● Version History
 -------------
+> v0.1.2(27/01/2023) - Add New Address API
 > v0.1 (17/01/2023) - Initial Release
 
 ![Footer](https://capsule-render.vercel.app/api?type=waving&color=gradient&height=200&section=footer)
