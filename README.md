@@ -33,6 +33,7 @@ PHP, HTML, CSS, Javascript를 활용한 화장품 웹사이트 HWAEUN 제작
 ● Version History
 -------------
 > v0.1.2(27/01/2023) - Add New Address API
+
 > v0.1 (17/01/2023) - Initial Release
 
 ![Footer](https://capsule-render.vercel.app/api?type=waving&color=gradient&height=200&section=footer)
